@@ -4,8 +4,8 @@ from tkinter import ttk
 
 def check_rate():
     listbox.delete(0, tk.END)
-    rate1 = rate1_entry.get() + '.'
-    rate2 = '1' + rate2_entry.get()
+    rate1 = rate2_entry.get() + '.'
+    rate2 = '1' + rate1_entry.get()
     rates = requests.get(f"https://{rate1}rate.sx/{rate2}")
     if rates.status_code == 200:
         for rate in rates:
